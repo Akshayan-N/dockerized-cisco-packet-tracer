@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if ! command -v packettracer &> /dev/null; then
+    echo "Installing Cisco Packet Tracer..."
+    sudo dpkg -i /root/CiscoPacketTracer822_amd64_signed.deb
+    rm  /root/CiscoPacketTracer822_amd64_signed.deb
+fi
+
+LIBGL_ALWAYS_SOFTWARE=1 packettracer
